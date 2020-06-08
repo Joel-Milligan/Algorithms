@@ -45,6 +45,41 @@ def run_djikstra():
     print(djikstra(source, matrix))
 
 
+def insertion_sort(array):
+    """
+    Returns a sorted version of array, using insertion sort.
+    """
+    sorted_array = array.copy()
+
+    # Start after first element, as the first element is trivially sorted.
+    for i in range(1, len(sorted_array)):
+        for j in range(i, 0, -1):
+            current_compare = sorted_array[j - 1]
+            
+            while current_compare > sorted_array[j]:
+                temp = current_compare
+                sorted_array[j - 1] = sorted_array[j]
+                sorted_array[j] = temp
+
+    return sorted_array
+
+
+def run_insertion_sort():
+    """
+    Runs insertion sort with all required inputs.
+    """
+    example = input("Are you using the example list? ")
+
+    if example != "y":
+        list_filename = input("Input filename of list: ")
+        unsorted_list = produce_list(list_filename)
+    else:
+        unsorted_list = produce_list("example-list.txt")
+
+    print(f"Unsorted: {unsorted_list}")
+    print(f"Sorted: {insertion_sort(unsorted_list)}")
+
+
 def parse_matrix(matrix):
     """
     Takes an adjacency matrix representing a graph and 
@@ -76,6 +111,20 @@ def produce_adjacency_matrix(filename):
     return parse_matrix(adjacency_matrix)
 
 
+def produce_list(filename):
+    """
+    Returns a list from given filename/path, in the format of CSV on a single line.
+    """
+    obj = open(filename)
+    string_list = obj.readline().split(',')
+    
+    num_list = []
+    for num in string_list:
+        num_list.append(int(num))
+
+    return num_list
+
+
 def main():
     chosen = False
     while not chosen:
@@ -83,9 +132,13 @@ def main():
         
         if algorithm == "help":
             print("Enter 1 to run Djikstra's Algorithm.")
+            print("Enter 2 to run Insertion Sort.")
             print("Enter help to get this message.")
         elif algorithm == "1":
             run_djikstra()
+            chosen = True
+        elif algorithm == "2":
+            run_insertion_sort()
             chosen = True
 
 
