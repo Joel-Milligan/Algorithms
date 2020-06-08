@@ -24,5 +24,5 @@ At first prompt, choose desired algorithm by inputing a number, which corrospond
 
 ## 2. Algorithms
 ### 2.1 Dijkstra's Algorithm
-Reads in an adjacency matrix from file specified or "example.txt" if no file is given. 
+Reads in an adjacency matrix from file specified or "example-graph.txt" if no file is given. 
 Returns an array of shortest distances using Dijkstra's algorithm, from a given source node to all nodes in the graph, with the index being the number of the node.
