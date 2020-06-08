@@ -64,6 +64,22 @@ def insertion_sort(array):
     return sorted_array
 
 
+def run_insertion_sort():
+    """
+    Runs insertion sort with all required inputs.
+    """
+    example = input("Are you using the example list? ")
+
+    if example != "y":
+        list_filename = input("Input filename of list: ")
+        unsorted_list = produce_list(list_filename)
+    else:
+        unsorted_list = produce_list("example-list.txt")
+
+    print(f"Unsorted: {unsorted_list}")
+    print(f"Sorted: {insertion_sort(unsorted_list)}")
+
+
 def parse_matrix(matrix):
     """
     Takes an adjacency matrix representing a graph and 
@@ -95,6 +111,20 @@ def produce_adjacency_matrix(filename):
     return parse_matrix(adjacency_matrix)
 
 
+def produce_list(filename):
+    """
+    Returns a list from given filename/path, in the format of CSV on a single line.
+    """
+    obj = open(filename)
+    string_list = obj.readline().split(',')
+    
+    num_list = []
+    for num in string_list:
+        num_list.append(int(num))
+
+    return num_list
+
+
 def main():
     chosen = False
     while not chosen:
@@ -102,9 +132,13 @@ def main():
         
         if algorithm == "help":
             print("Enter 1 to run Djikstra's Algorithm.")
+            print("Enter 2 to run Insertion Sort.")
             print("Enter help to get this message.")
         elif algorithm == "1":
             run_djikstra()
+            chosen = True
+        elif algorithm == "2":
+            run_insertion_sort()
             chosen = True
 
 
