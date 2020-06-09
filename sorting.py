@@ -19,22 +19,6 @@ def insertion_sort(array):
     return sorted_array
 
 
-def run_insertion_sort():
-    """
-    Runs insertion sort with all required inputs.
-    """
-    example = input("Are you using the example list? ")
-
-    if example != "y":
-        list_filename = input("Input filename of list: ")
-        unsorted_list = produce_list(list_filename)
-    else:
-        unsorted_list = produce_list("./examples/example-list.txt")
-
-    print(f"Unsorted: {unsorted_list}")
-    print(f"Sorted: {insertion_sort(unsorted_list)}")
-
-
 def merge_sort(array):
     """
     Returns a sorted version of array, using insertion sort.
@@ -76,9 +60,9 @@ def merge(large_array, small_array):
     return merged
 
 
-def run_merge_sort():
+def run_sort(algorithm):
     """
-    Runs insertion sort with all required inputs.
+    Runs specified sort with all required inputs.
     """
     example = input("Are you using the example list? ")
 
@@ -89,4 +73,8 @@ def run_merge_sort():
         unsorted_list = produce_list("./examples/example-list.txt")
 
     print(f"Unsorted: {unsorted_list}")
-    print(f"Sorted: {merge_sort(unsorted_list)}")
+
+    if algorithm == "insertion":
+        print(f"Sorted: {insertion_sort(unsorted_list)}")
+    elif algorithm == "merge":
+        print(f"Sorted: {merge_sort(unsorted_list)}")

@@ -11,12 +11,12 @@ def sorting_algs():
             print("Enter 2 to run a merge sort.")
             print("Enter help to get this message.")
         elif algorithm == "1":
-            from sorting import run_insertion_sort, insertion_sort
-            run_insertion_sort()
+            from sorting import run_sort, insertion_sort
+            run_sort("insertion")
             chosen = True
         elif algorithm == "2":
-            from sorting import run_merge_sort, merge_sort, merge
-            run_merge_sort()
+            from sorting import run_sort, merge_sort, merge
+            run_sort("merge")
             chosen = True
 
 
