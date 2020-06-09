@@ -8,10 +8,15 @@ def sorting_algs():
         
         if algorithm == "help":
             print("Enter 1 to run an insertion sort.")
+            print("Enter 2 to run a merge sort.")
             print("Enter help to get this message.")
         elif algorithm == "1":
             from sorting import run_insertion_sort, insertion_sort
             run_insertion_sort()
+            chosen = True
+        elif algorithm == "2":
+            from sorting import run_merge_sort, merge_sort, merge
+            run_merge_sort()
             chosen = True
 
 
