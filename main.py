@@ -40,7 +40,7 @@ def run_djikstra():
         graph_filename = input("Input filename of graph: ")
         matrix = produce_adjacency_matrix(graph_filename)
     else:
-        matrix = produce_adjacency_matrix("example.txt")
+        matrix = produce_adjacency_matrix("./examples/example-graph.txt")
 
     print(djikstra(source, matrix))
 
@@ -74,7 +74,7 @@ def run_insertion_sort():
         list_filename = input("Input filename of list: ")
         unsorted_list = produce_list(list_filename)
     else:
-        unsorted_list = produce_list("example-list.txt")
+        unsorted_list = produce_list("./examples/example-list.txt")
 
     print(f"Unsorted: {unsorted_list}")
     print(f"Sorted: {insertion_sort(unsorted_list)}")
