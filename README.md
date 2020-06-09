@@ -8,6 +8,7 @@ Repository of a collection of various algorithms.
 - [2. Algorithms](#2-algorithms)
   - [2.1 Sorting Algorithms](#21-sorting-algorithms)
     - [2.1.1 Insertion Sort](#211-insertion-sort)
+    - [2.1.2 Merge Sort](#212-merge-sort)
   - [2.2 Shortest Path Algorithms](#22-shortest-path-algorithms)
     - [2.2.1 Dijkstra's Algorithm](#221-dijkstras-algorithm)
 
@@ -27,6 +28,10 @@ Then select the specific algorithm in the same way as the category.
 ## 2. Algorithms
 ### 2.1 Sorting Algorithms
 #### 2.1.1 Insertion Sort
+1. Input "y" (without quotes) if using the example list provided, input anything else to specify a specific file name with an unsorted list. Reads in an unsorted list from file specified or "example-list.txt" if no file is given.
+2. Printed result is the initial unsorted list of integers, and then the sorted list.
+
+#### 2.1.2 Merge Sort
 1. Input "y" (without quotes) if using the example list provided, input anything else to specify a specific file name with an unsorted list. Reads in an unsorted list from file specified or "example-list.txt" if no file is given.
 2. Printed result is the initial unsorted list of integers, and then the sorted list.
 
