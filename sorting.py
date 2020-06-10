@@ -60,6 +60,41 @@ def merge(large_array, small_array):
     return merged
 
 
+def quick_sort(array, low, high):
+    """
+    Returns a sorted version of array, using quick sort.
+    """
+    if low < high:
+        partition_index = partition(array, low, high)
+        quick_sort(array, low, partition_index - 1)
+        quick_sort(array, partition_index + 1, high)
+
+    return array
+
+
+def partition(array, low, high):
+    """
+    Returns the index of the sorted pivot (which is the array indexed at the high index), 
+    with everything prior in the list being less then pivot and everything after being greater then pivot.
+    """
+    pivot = array[high]
+
+    i = low - 1
+
+    for j in range(low, high):
+        if array[j] <= pivot:
+            i += 1
+
+            temp = array[j]
+            array[j] = array[i]
+            array[i] = temp
+
+    temp = array[high]
+    array[high] = array[i + 1]
+    array[i + 1] = temp
+    return i + 1
+
+
 def run_sort(algorithm):
     """
     Runs specified sort with all required inputs.
@@ -78,3 +113,5 @@ def run_sort(algorithm):
         print(f"Sorted: {insertion_sort(unsorted_list)}")
     elif algorithm == "merge":
         print(f"Sorted: {merge_sort(unsorted_list)}")
+    elif algorithm == "quick":
+        print(f"Sorted: {quick_sort(unsorted_list, 0, len(unsorted_list) - 1)}")

@@ -3,20 +3,26 @@ def sorting_algs():
     Function to run all sorting algorithms from.
     """
     chosen = False
+    from sorting import run_sort 
     while not chosen:
         algorithm = input("Which algorithm would you like to use? (help): ")
-        
+
         if algorithm == "help":
             print("Enter 1 to run an insertion sort.")
             print("Enter 2 to run a merge sort.")
+            print("Enter 3 to run a quick sort.")
             print("Enter help to get this message.")
         elif algorithm == "1":
-            from sorting import run_sort, insertion_sort
+            from sorting import insertion_sort
             run_sort("insertion")
             chosen = True
         elif algorithm == "2":
-            from sorting import run_sort, merge_sort, merge
+            from sorting import merge_sort, merge
             run_sort("merge")
+            chosen = True
+        elif algorithm == "3":
+            from sorting import quick_sort, partition
+            run_sort("quick")
             chosen = True
 
 
